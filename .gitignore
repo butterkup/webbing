@@ -1,0 +1,20 @@
+# This is a comment in .gitignore file
+node_modules
+__pycache__/
+.vscode
+# forward slash at the end will only match folders
+# All patterns are relative to this file
+ignore*
+Ignore*
+*.ignore
+*.ign
+*.IGN
+*.ignore.*
+*.IGNORE.*
+.next/
+*/rust/target/
+*.out
+*.exe
+.pytest_cache
+.mypy_cache
+.env

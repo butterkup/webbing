@@ -1,0 +1,13 @@
+aiohttp
+mako
+jinja2
+attrs
+httpx
+httpx[cli]
+uvloop
+rich
+click
+aiohttp_mako
+aiohttp_security
+aiohttp_session
+aiohttp_jinja2
