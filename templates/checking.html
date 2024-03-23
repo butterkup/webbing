@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning ALPINE JS</title>
+    <script src="/static/checking.js"></script>
+    <script defer src="/static/js/alpine.min.js"></script>
+  </head>
+  <body>
+    <main x-data="{'name': 'Toby Smith', 'age': 21, 'grow': true}">
+      <h1>My name is <span x-text="name"></span>!</h1>
+      <h1>And I am <span x-text="age"></span> years old.</h1>
+      <button x-show="grow" x-on:click="age++; if (age >= 30) grow = false;">
+        Add Year
+      </button>
+      <button x-show="!grow" x-on:click="age--; if (10 >= age) grow = true;">
+        Del Year
+      </button>
+      <div x-data="SEARCH">
+        <input type="text" placeholder="Enter Name" x-model="search" />
+        <ol>
+          <template x-for="item in filtered" :key="item">
+            <li x-text="item"></li>
+          </template>
+        </ol>
+      </div>
+      <div
+        style="
+          background-color: black;
+          color: white;
+          height: 5cm;
+          aspect-ratio: 1/1;
+        "
+        x-data="SEARCH.DIV1"
+      >
+        <h1 x-text="title"></h1>
+      </div>
+      <div
+        style="
+          background-color: grey;
+          color: white;
+          height: 5cm;
+          aspect-ratio: 1/1;
+        "
+        x-data="SEARCH.DIV2"
+      >
+        <h1 x-text="title"></h1>
+        <button @click="swap1()">Change</button>
+      </div>
+    </main>
+  </body>
+</html>
