@@ -1,0 +1,272 @@
+body > div {
+  padding: 5px;
+  background-color: white;
+}
+
+body > div:empty {
+  display: none;
+}
+
+body > div:first-child {
+  padding-top: 20px;
+}
+
+body > div:last-child {
+  padding-bottom: 20px;
+}
+
+body {
+  padding: 2px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background-color: #312d2d;
+}
+
+u {
+  text-transform: uppercase;
+}
+
+/* direct child */
+.cat > li.alive {
+  color: green;
+}
+/* descendant */
+.cat li.dead {
+  color: red;
+}
+
+/* :is pseudo class */
+li:is(.alive, .dead) {
+  font-family: "Architects Daughter";
+}
+
+.people {
+  line-height: 1.2rem;
+  font-family: "Hurmit Nerd Font Mono";
+}
+
+.people > li:first-child {
+  text-decoration: underline;
+}
+
+/* .people:last-child { */
+/* text-decoration: line-through; */
+/* } */
+
+.people > li.girl + li.boy {
+  color: blue;
+}
+
+.people > li.girl + li.girl {
+  color: crimson;
+}
+
+.people > li.boy + li.boy {
+  color: orange;
+}
+
+.people > li.boy + li.girl {
+  color: purple;
+}
+
+.people > li.girl:first-of-type {
+  text-transform: uppercase;
+}
+
+.people > li.boy:last-of-type {
+  text-decoration: dashed;
+}
+
+.people > li:last-child {
+  text-decoration: line-through;
+}
+
+.mbox,
+.mbox .box {
+  width: min-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "1 2" "3 4";
+  gap: 3px;
+  font-size: 1em;
+  font-family: "Hurmit Nerd Font Mono";
+}
+
+.box {
+  aspect-ratio: 1/1;
+  height: 20vw;
+  max-height: 150px;
+  min-height: 100px;
+}
+
+.mbox .box .ibox:nth-child(1),
+.mbox .box:nth-child(1) {
+  grid-area: "1";
+}
+
+.mbox .box .ibox:nth-child(2),
+.mbox .box:nth-child(2) {
+  grid-area: "2";
+}
+
+.mbox .box .ibox:nth-child(3),
+.mbox .box:nth-child(3) {
+  grid-area: "3";
+}
+
+.mbox .box .ibox:nth-child(4),
+.mbox .box:nth-child(4) {
+  grid-area: "4";
+}
+
+.mbox .box .ibox:nth-child(1),
+.mbox .box:nth-child(1) {
+  background-color: crimson;
+}
+
+.mbox .box .ibox:nth-child(2),
+.mbox .box:nth-child(2) {
+  background-color: salmon;
+}
+
+.mbox .box .ibox:nth-child(3),
+.mbox .box:nth-child(3) {
+  background-color: rebeccapurple;
+}
+
+.mbox .box .ibox:nth-child(4),
+.mbox .box:nth-child(4) {
+  background-color: orangered;
+}
+
+.mbox:hover {
+  background-color: teal;
+}
+
+.mbox .box:hover .ibox:hover {
+  background-color: white;
+}
+
+.mbox .box:hover {
+  background-color: transparent;
+}
+
+.mbox .box:hover .ibox {
+  background-color: transparent;
+}
+
+.box .ibox:before {
+  height: 100%;
+  display: flex;
+  aspect-ratio: 1/1;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.mbox,
+.mbox .box,
+.mbox .box .ibox,
+.mbox .box .ibox::before {
+  transition: 0.3s linear;
+}
+
+.mbox .box:hover .ibox:hover::before {
+  color: initial;
+}
+
+.mbox .box:hover .ibox::before {
+  color: white;
+}
+
+.box:nth-child(1) .ibox:nth-child(1):before {
+  content: "1";
+}
+.box:nth-child(1) .ibox:nth-child(2):before {
+  content: "2";
+}
+.box:nth-child(2) .ibox:nth-child(1):before {
+  content: "3";
+}
+.box:nth-child(2) .ibox:nth-child(2):before {
+  content: "4";
+}
+
+.box:nth-child(1) .ibox:nth-child(3):before {
+  content: "5";
+}
+.box:nth-child(1) .ibox:nth-child(4):before {
+  content: "6";
+}
+.box:nth-child(2) .ibox:nth-child(3):before {
+  content: "7";
+}
+.box:nth-child(2) .ibox:nth-child(4):before {
+  content: "8";
+}
+
+.box:nth-child(3) .ibox:nth-child(1):before {
+  content: "9";
+}
+.box:nth-child(3) .ibox:nth-child(2):before {
+  content: "10";
+}
+.box:nth-child(4) .ibox:nth-child(1):before {
+  content: "11";
+}
+.box:nth-child(4) .ibox:nth-child(2):before {
+  content: "12";
+}
+
+.box:nth-child(3) .ibox:nth-child(3):before {
+  content: "13";
+}
+.box:nth-child(3) .ibox:nth-child(4):before {
+  content: "14";
+}
+.box:nth-child(4) .ibox:nth-child(3):before {
+  content: "15";
+}
+.box:nth-child(4) .ibox:nth-child(4):before {
+  content: "16";
+}
+
+/* Elements with the attr attribute whose
+value starts with the string "co" */
+[attr^="co"] {
+  color: orangered;
+}
+/* Elements with the attr attribute whose
+value ends with the string "ing" */
+[attr$="ing"] {
+  color: crimson;
+}
+/* Elements with the attr attribute being
+a list of individual names where "name" is
+one of them. Behaves like the class list */
+[attr~="name"] {
+  color: teal;
+}
+/* Element with both "name" and "boy" in
+the attr attribute value list */
+[attr~=name][attr~=boy] {
+  text-decoration: underline;
+}
+/* Element with both "name" and "girl" in
+the attr attribute value list */
+[attr~=name][attr~=girl] {
+  text-decoration: line-through;
+}
+/* Elements with the attr attribute whose
+value has the substring "name" */
+[attr*="jec"] {
+  color: slateblue;
+}
+/* All elements with the attribute attr
+regardless of their values */
+[attr] {
+  text-transform: capitalize;
+}
