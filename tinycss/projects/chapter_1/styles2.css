@@ -261,7 +261,7 @@ the attr attribute value list */
   text-decoration: line-through;
 }
 /* Elements with the attr attribute whose
-value has the substring "name" */
+value has the substring "jec" */
 [attr*="jec"] {
   color: slateblue;
 }
