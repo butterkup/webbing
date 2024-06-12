@@ -1,0 +1,89 @@
+/** Setup **/
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff9e8;
+  min-height: 100vh;
+  font-family: sans-serif;
+  color: #151412;
+}
+
+main {
+  margin: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(auto, 1fr)) 250px;
+  /* grid-auto-flow:column; */
+  /* grid-auto-columns: max-content; */
+  /* grid-auto-rows: min-content; */
+  grid-template-areas:
+    "header  header  header"
+    "content content author"
+    "content content aside"
+    "plays   .       aside"
+    "footer  footer  footer";
+  gap: 20px;
+}
+
+@media (min-width: 955px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "header  header  header"
+    "content author  aside"
+    "content plays   aside"
+    "footer  footer  footer";
+  }
+}
+
+header {
+  grid-area: header;
+}
+aside {
+  grid-area: aside;
+}
+footer {
+  grid-area: footer;
+}
+article {
+  grid-area: content;
+}
+.plays {
+  grid-area: plays;
+}
+.author-details {
+  grid-area: author;
+}
+
+img {
+  float: left;
+  margin: 12px 12px 12px 0;
+}
+
+/* main > * {
+  border: solid 1px #bfbfbf;
+  padding: 12px;
+} */
+
+main > *,
+section {
+  display: flow-root;
+}
+
+p,
+ul {
+  line-height: 1.5;
+}
+
+article p span {
+  display: block;
+}
+
+article p span:last-of-type,
+article p span:nth-last-child(2) {
+  text-indent: 16px;
+}
+
+.plays ul {
+  margin-left: 162px;
+}

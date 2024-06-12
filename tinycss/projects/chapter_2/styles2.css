@@ -1,0 +1,74 @@
+body,
+html {
+  padding: 0px;
+  margin: 0px;
+  outline: 0px;
+}
+
+main {
+  margin: 0px;
+  height: 100vh;
+}
+
+main > * {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 2px;
+  color: cadetblue;
+}
+
+main > .one {
+  height: 100%;
+  background-color: lightblue;
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 1.75fr);
+  grid-template-rows: 1fr repeat(2, 5fr) 1fr;
+  /* gap: <row-gap> <column-gap>; */
+  /* gap: 2px 2px; */
+  /* gap: <row/column-gap>; */
+  /* gap: 2px; */
+  row-gap: 2px;
+  column-gap: 2px;
+}
+
+main > .one > * {
+  border-radius: 5px;
+}
+
+main > .one > div:nth-child(1) {
+  /* grid-column: 1 / 4; */
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 1;
+}
+
+main > .one > div:nth-child(2) {
+  grid-column: 1;
+  /* grid-row: 2 / 4; */
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+main > .one > div:nth-child(3) {
+  grid-column: 2 / 4;
+  /* grid-row: 2; */
+  grid-row-start: 2;
+  grid-row-end: calc(2 + 1);
+}
+
+main > .one > div:nth-child(4) {
+  /* grid-column: 2; */
+  grid-column-start: 2;
+  grid-column-end: calc(2 + 1);
+  grid-row: 3;
+}
+
+main > .one > div:nth-child(5) {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+main > .one > div:nth-child(6) {
+  grid-column: 1 / 4;
+  grid-row: 4;
+}
