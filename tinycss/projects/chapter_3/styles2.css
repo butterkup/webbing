@@ -1,0 +1,133 @@
+html,
+body,
+main,
+main > section {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main > section:nth-child(2n) {
+  background-color: rgb(127, 239, 174);
+}
+
+main > section:nth-child(2n + 1) {
+  background-color: rgb(178, 159, 252);
+}
+
+main > section {
+  height: 100vh;
+}
+
+main > section:nth-child(1) svg {
+  background-color: wheat;
+  border: 1px solid black;
+  margin: 2px;
+}
+
+.anime {
+  width: 200px;
+  aspect-ratio: 1/1;
+  animation-name: change-color, change-border-radius;
+  animation-duration: 3s;
+  animation-iteration-count: 10;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes change-color {
+  0% {
+    background: teal;
+  }
+  50% {
+    background: crimson;
+  }
+  100% {
+    background: teal;
+  }
+}
+
+@keyframes change-border-radius {
+  from {
+    border-radius: 0;
+  }
+  50% {
+    border-radius: 50%;
+  }
+  to {
+    border-radius: 0;
+  }
+}
+
+.loader {
+  height: 4.5cm;
+  aspect-ratio: 1/1;
+  background-color: crimson;
+  position: relative;
+  border-radius: 50%;
+  margin: 2px;
+}
+
+.loader .load:nth-child(1) {
+  height: 2cm;
+  top: 0.25cm;
+  animation-delay: 0ms;
+  /* background-color: yellowgreen; */
+  --color: yellowgreen;
+}
+
+.loader .load:nth-child(2) {
+  height: 1.5cm;
+  top: 0.75cm;
+  animation-delay: 100ms;
+  /* background-color: orangered; */
+  --color: orangered;
+}
+
+.loader .load:nth-child(3) {
+  height: 1cm;
+  top: 1.25cm;
+  animation-delay: 200ms;
+  /* background-color: teal; */
+  --color: teal;
+}
+
+.loader .center {
+  height: 0.5cm;
+  aspect-ratio: 1/1;
+  background-color: wheat;
+  background: radial-gradient(wheat, white);
+  border-radius: 50%;
+  position: absolute;
+  top: 2cm;
+  left: 2cm;
+}
+
+.loader .load {
+  aspect-ratio: 1/1;
+  border-top-right-radius: 100%;
+  border-top: 5px solid wheat;
+  border-right: 5px solid wheat;
+  left: 50%;
+  position: absolute;
+  box-sizing: border-box;
+  background-color: transparent;
+  /* background-color: teal; */
+  transform-origin: bottom left;
+  animation: loading 2s infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  background: linear-gradient(to top right, transparent, var(--color));
+}
+
+@keyframes loading {
+  from {
+    transform: rotateZ(-45deg);
+  }
+  to {
+    transform: rotateZ(315deg);
+  }
+}
