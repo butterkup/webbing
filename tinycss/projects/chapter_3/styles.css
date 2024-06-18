@@ -96,3 +96,54 @@ rect:nth-child(11) {
   fill: #128688;
   animation-delay: 2s;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  rect {
+    animation: none;
+  }
+}
+
+@media (prefers-contrast: less) {
+  rect {
+    fill: teal;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  rect {
+    fill: yellowgreen;
+  }
+}
+
+/* Progress BAR*/
+
+progress {
+  height: 24px;
+  width: 100%;
+  /* background-color: pink; */ /* Fails spectacularly. */
+  /* accent-color: #128688; */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+::-webkit-progress-value {
+  border-radius: 20px;
+  background-color: #7be6e8;
+}
+
+::-webkit-progress-bar {
+  border-radius: 20px;
+  background: #44b3ff;
+  background: linear-gradient(to right, #128688 0%, #4db3ff 100%);
+  border: none;
+}
+
+::-webkit-progress-inner-element {
+  border-radius: 20px;
+}
+
+::-mox-progress-bar {
+  border-radius: 20px;
+  background-color: #7be6e8;
+}
