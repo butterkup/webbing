@@ -1,0 +1,126 @@
+@import url(fonts.css);
+
+html {
+  background-color: #fffbed;
+}
+
+body {
+  font-family: "PT Serif", serif;
+  color: #323232;
+  padding: 0px 24px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  /* font-weight: 700;
+  font-size: 4rem;
+  font-family: 'Oswald', sans-serif; */
+  font: 700 4rem/1 "Oswald", sans-serif;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h2 {
+  font: 3rem/0.95 "Oswald", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font: 2rem/0.95 "Oswald", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+time {
+  font: 700 1.5rem "Oswald", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  text-align: center;
+
+  border-top: 3px solid #333333;
+  border-bottom: 3px solid #333333;
+  padding: 12px 0px;
+
+  display: block;
+}
+
+time sup {
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+
+blockquote {
+  font: 1.8rem/1.25 "Oswald", sans-serif;
+  margin: 1.5rem 2rem;
+}
+
+blockquote::before {
+  content: open-quote;
+}
+
+blockquote::after {
+  content: close-quote;
+}
+
+@counter-style emoji {
+  /* symbols: \2615; */
+  symbols: ✒️;
+  system: cyclic;
+  suffix: " ";
+}
+
+article ul {
+  list-style: emoji;
+}
+
+img {
+  filter: grayscale(100%);
+}
+
+figure {
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+figcaption {
+  font-family: "Oswald", sans-serif;
+}
+
+@media (min-width: 750px) {
+  article {
+    column-rule: 2px solid #323232;
+  }
+  blockquote {
+    column-span: all;
+  }
+
+  figure {
+    break-inside: avoid;
+    float: left;
+    margin-right: 24px;
+  }
+
+  p {
+    text-align: justify;
+    hyphens: auto;
+  }
+}
+
+@media (min-width: 955px) {
+  article {
+    column-count: 3;
+    margin-top: 36px;
+    column-gap: 42px;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 955px) {
+  article {
+    column-count: 2;
+    margin-top: 20px;
+    column-gap: 24px;
+  }
+}
