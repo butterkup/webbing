@@ -16,8 +16,8 @@ async def project(req: web.Request) -> web.StreamResponse:
 
 routes = (
     web.get(r"/project/{project_id:\d+}", project),
-    web.static("/projects", projects_dir),
-    web.static("/fonts", fonts_dir),
+    web.static("/projects", projects_dir, follow_symlinks=True),
+    web.static("/fonts", fonts_dir, follow_symlinks=True),
 )
 
 
